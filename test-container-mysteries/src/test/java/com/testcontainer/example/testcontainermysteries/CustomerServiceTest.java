@@ -11,7 +11,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CustomerServiceTest {
-final static MySQLContainer<?> mySQLContainer=new MySQLContainer<>("mysql");
+final static MySQLContainer<?> mySQLContainer=new MySQLContainer<>("mysql:latest");
 /*static PostgreSQLContainer<?> mySQLContainer = new PostgreSQLContainer<>(
         "postgres:15-alpine"
 );*/

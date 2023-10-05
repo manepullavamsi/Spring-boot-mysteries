@@ -53,7 +53,7 @@ public class CustomerService {
           PreparedStatement preparedstmt=connection.prepareStatement(        """
                     create table if not exists customers (
                         id bigint not null,
-                        name varchar not null,
+                        name varchar(255) not null,
                         primary key (id)
                     )
                     """
