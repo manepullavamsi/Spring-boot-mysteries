@@ -12,6 +12,7 @@ public class CustomerService {
 
     CustomerService(DBConnectionProvider dbConnectionProvider){
         this.dbConnectionProvider=dbConnectionProvider;
+        createTableIfDoesnotExist();
 
     }
     public void createCustomer(Customer customer){
@@ -47,7 +48,7 @@ public class CustomerService {
         return customerList;
     }
 
-    void createTableIfDoesnotExist() throws SQLException {
+    void createTableIfDoesnotExist()  {
         try(Connection connection=this.dbConnectionProvider.getConnection()){
           PreparedStatement preparedstmt=connection.prepareStatement(        """
                     create table if not exists customers (
@@ -58,6 +59,10 @@ public class CustomerService {
                     """
           );
           preparedstmt.execute();
+        }
+        catch (Exception ex)
+        {
+            throw new RuntimeException();
         }
 
     }

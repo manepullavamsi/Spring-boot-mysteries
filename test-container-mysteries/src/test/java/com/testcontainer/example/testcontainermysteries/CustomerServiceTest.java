@@ -5,15 +5,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CustomerServiceTest {
-//final static MySQLContainer<?> mySQLContainer=new MySQLContainer<>("mysql");
-static PostgreSQLContainer<?> mySQLContainer = new PostgreSQLContainer<>(
+final static MySQLContainer<?> mySQLContainer=new MySQLContainer<>("mysql");
+/*static PostgreSQLContainer<?> mySQLContainer = new PostgreSQLContainer<>(
         "postgres:15-alpine"
-);
+);*/
 CustomerService customerService;
 
     @BeforeAll
